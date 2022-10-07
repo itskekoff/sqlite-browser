@@ -5,7 +5,7 @@ var SQL_SELECT_REGEX = /SELECT\s+[^;]+\s+FROM\s+/mi;
 var db = null;
 var f = {
     mimeType: 'application/x-sqlite-3',
-    filename: "export.db",
+    filename: undefined,
     url: undefined,
     downloadUrl: undefined
 }
@@ -280,7 +280,13 @@ function executeSql() {
 
 function save() {
 	var blob = new Blob([db.export()]);
-    saveAs(blob, "export.db")
+    if (loadUrlDB === null) {
+        saveAs(blob, f.filename)
+    } else {
+        var name = loadUrlDB.substring(loadUrlDB.lastIndexOf('/') + 1)
+        var arr = name.split(".")[0]
+        saveAs(blob, arr + ".db")
+    }
     var element = document.getElementById("sql-save")
     element.textContent = "Saved!"
     setTimeout(function () {
