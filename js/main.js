@@ -5,7 +5,7 @@ var SQL_SELECT_REGEX = /SELECT\s+[^;]+\s+FROM\s+/mi;
 var db = null;
 var f = {
     mimeType: 'application/x-sqlite-3',
-    filename: undefined,
+    filename: "download.db",
     url: undefined,
     downloadUrl: undefined
 }
