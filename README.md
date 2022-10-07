@@ -10,7 +10,7 @@ SQLite Viewer
 Можно добавлять файлы с сервера (используя ajax JS, удаленный сервер должен отправить `Access-Control-Allow-Origin:*`):
 `http://itskekoff.github.io/sqlite-browser/?url=http://example.com/data.sqlite`
 
-### License
+### Лицензия
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
